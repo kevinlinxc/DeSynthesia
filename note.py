@@ -1,22 +1,21 @@
 
 
 class Note:
-    def __init__(self, note, starttime):
+    def __init__(self, note, start_time):
         self.note = note
-        self.starttime = starttime
+        self.start_time = start_time
         self.duration = 0
-        self.endtime = starttime
+        self.endtime = start_time
 
     def set_end_time(self, endtime):
         self.endtime = endtime
-        self.duration = endtime - self.starttime
+        self.duration = endtime - self.start_time
 
     def get_start_time(self):
-        return self.starttime
+        return self.start_time
 
     def get_duration(self):
         return self.duration
 
     def __repr__(self):
-        return "\n" + self.note + " " + str(self.starttime) + " " + str(self.endtime)
-
+        return "\n" + self.note + " " + str(self.start_time) + " " + str(self.endtime)

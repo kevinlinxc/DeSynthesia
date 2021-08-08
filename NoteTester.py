@@ -3,7 +3,7 @@
 # with a gui, where you can drag the bars and see how the notes fit onto the piano, but this is not a high priority.
 
 import cv2
-import NoteDicts
+import dicts
 import random
 
 y = 600
@@ -31,9 +31,9 @@ def color_at_both_points(x1, x2, frame):
 
 # cv2.namedWindow('image',cv2.WINDOW_NORMAL)
 #
-# cv2.resizeWindow('image', insize[0], insize[1])
+# cv2.resizeWindow('image', in_size[0], in_size[1])
 
-notes = NoteDicts.getnotes()
+notes = dicts.get_notes()
 
 
 counter = 0
