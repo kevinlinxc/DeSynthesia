@@ -2,3 +2,5 @@
 venv
 __pycache__/
 outputs/
+input_videos
+output*.mp4

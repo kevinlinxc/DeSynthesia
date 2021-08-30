@@ -1,130 +1,260 @@
-AtoBflat = 22
-BflattoB = 16
-BtoC = 31
-CtoDflat = 19
-DflattoD = 24
-DtoEflat = 21
-EflattoE = 15
-EtoF = 34
-FtoGflat = 15
-GflattoG = 24
-GtoAflat = 20
-AflattoA = 20
-
-AtoB = AtoBflat + BflattoB
-AtoC = AtoB + BtoC
-AtoDflat = AtoC + CtoDflat
-AtoD = AtoDflat + DflattoD
-AtoEflat = AtoD + DtoEflat
-AtoE = AtoEflat + EflattoE
-AtoF = AtoE + EtoF
-AtoGflat = AtoF + FtoGflat
-AtoG = AtoGflat + GflattoG
-AtoAflat = AtoG + GtoAflat
-
-A0 = 16
-A1 = 275
-A2 = 534
-A3 = 792
-A4 = 1052
-A5 = 1311
-A6 = 1571
-A7 = 1828
-
-RANDOM_PARALLAX_BULLSHIT = 3
+Francesco = 0
+SheetMusicBoss = 1
 
 
-def get_notes():
-    notes = {
-        'A0': A0,
-        'Bflat0': A0 + AtoBflat,
-        'B0': A0 + AtoB,
-        'C1': A0 + AtoC,
-        'Dflat1': A0 + AtoDflat,
-        'D1': A0 + AtoD,
-        'Eflat1': A0 + AtoEflat,
-        'E1': A0 + AtoE,
-        'F1': A0 + AtoF,
-        'Gflat1': A0 + AtoGflat + 1,
-        'G1': A0 + AtoG,
-        'Aflat1': A0 + AtoAflat,
-        'A1': A1,
-        'Bflat1': A1 + AtoBflat,
-        'B1': A1 + AtoB,
-        'C2': A1 + AtoC,
-        'Dflat2': A1 + AtoDflat,
-        'D2': A1 + AtoD,
-        'Eflat2': A1 + AtoEflat + 3,
-        'E2': A1 + AtoE,
-        'F2': A1 + AtoF,
-        'Gflat2': A1 + AtoGflat + 3,
-        'G2': A1 + AtoG,
-        'Aflat2': A1 + AtoAflat,
-        'A2': A2,
-        'Bflat2': A2 + AtoBflat,
-        'B2': A2 + AtoB,
-        'C3': A2 + AtoC + 3,
-        'Dflat3': A2 + AtoDflat + 3,
-        'D3': A2 + AtoD,
-        'Eflat3': A2 + AtoEflat,
-        'E3': A2 + AtoE,
-        'F3': A2 + AtoF,
-        'Gflat3': A2 + AtoGflat,
-        'G3': A2 + AtoG,
-        'Aflat3': A2 + AtoAflat + 1,
-        'A3': A3,
-        'Bflat3': A3 + AtoBflat + 2,
-        'B3': A3 + AtoB,
-        'C4': A3 + AtoC + 3,
-        'Dflat4': A3 + AtoDflat + 3,
-        'D4': A3 + AtoD,
-        'Eflat4': A3 + AtoEflat,
-        'E4': A3 + AtoE,
-        'F4': A3 + AtoF,
-        'Gflat4': A3 + AtoGflat,
-        'G4': A3 + AtoG,
-        'Aflat4': A3 + AtoAflat,
-        'A4': A4,
-        'Bflat4': A4 + AtoBflat + 3,
-        'B4': A4 + AtoB,
-        'C5': A4 + AtoC + 3,
-        'Dflat5': A4 + AtoDflat + 1,
-        'D5': A4 + AtoD,
-        'Eflat5': A4 + AtoEflat,
-        'E5': A4 + AtoE,
-        'F5': A4 + AtoF,
-        'Gflat5': A4 + AtoGflat,
-        'G5': A4 + AtoG,
-        'Aflat5': A4 + AtoAflat,
-        'A5': A5,
-        'Bflat5': A5 + AtoBflat,
-        'B5': A5 + AtoB,
-        'C6': A5 + AtoC,
-        'Dflat6': A5 + AtoDflat,
-        'D6': A5 + AtoD,
-        'Eflat6': A5 + AtoEflat,
-        'E6': A5 + AtoE,
-        'F6': A5 + AtoF,
-        'Gflat6': A5 + AtoGflat,
-        'G6': A5 + AtoG,
-        'Aflat6': A5 + AtoAflat,
-        'A6': A6,
-        'Bflat6': A6 + AtoBflat,
-        'B6': A6 + AtoB,
-        'C7': A6 + AtoC,
-        'Dflat7': A6 + AtoDflat,
-        'D7': A6 + AtoD,
-        'Eflat7': A6 + AtoEflat - 3,
-        'E7': A6 + AtoE,
-        'F7': A6 + AtoF,
-        'Gflat7': A6 + AtoGflat,
-        'G7': A6 + AtoG,
-        'Aflat7': A6 + AtoAflat,
-        'A7': A7,
-        'Bflat7': A7 + AtoBflat,
-        'B7': A7 + AtoB,
-        'C8': A7 + AtoC,
-    }
+
+
+
+
+def get_notes(name):
+    if name is Francesco:
+        AtoBflat = 22
+        BflattoB = 16
+        BtoC = 31
+        CtoDflat = 19
+        DflattoD = 24
+        DtoEflat = 21
+        EflattoE = 15
+        EtoF = 34
+        FtoGflat = 15
+        GflattoG = 24
+        GtoAflat = 20
+
+        AtoB = AtoBflat + BflattoB
+        AtoC = AtoB + BtoC
+        AtoDflat = AtoC + CtoDflat
+        AtoD = AtoDflat + DflattoD
+        AtoEflat = AtoD + DtoEflat
+        AtoE = AtoEflat + EflattoE
+        AtoF = AtoE + EtoF
+        AtoGflat = AtoF + FtoGflat
+        AtoG = AtoGflat + GflattoG
+        AtoAflat = AtoG + GtoAflat
+
+        A0 = 16
+        A1 = 275
+        A2 = 534
+        A3 = 792
+        A4 = 1052
+        A5 = 1311
+        A6 = 1571
+        A7 = 1828
+        notes = {
+            'A0': A0,
+            'Bflat0': A0 + AtoBflat,
+            'B0': A0 + AtoB,
+            'C1': A0 + AtoC,
+            'Dflat1': A0 + AtoDflat,
+            'D1': A0 + AtoD,
+            'Eflat1': A0 + AtoEflat,
+            'E1': A0 + AtoE,
+            'F1': A0 + AtoF,
+            'Gflat1': A0 + AtoGflat + 1,
+            'G1': A0 + AtoG,
+            'Aflat1': A0 + AtoAflat,
+            'A1': A1,
+            'Bflat1': A1 + AtoBflat,
+            'B1': A1 + AtoB,
+            'C2': A1 + AtoC,
+            'Dflat2': A1 + AtoDflat,
+            'D2': A1 + AtoD,
+            'Eflat2': A1 + AtoEflat + 3,
+            'E2': A1 + AtoE,
+            'F2': A1 + AtoF,
+            'Gflat2': A1 + AtoGflat + 3,
+            'G2': A1 + AtoG,
+            'Aflat2': A1 + AtoAflat,
+            'A2': A2,
+            'Bflat2': A2 + AtoBflat,
+            'B2': A2 + AtoB,
+            'C3': A2 + AtoC + 3,
+            'Dflat3': A2 + AtoDflat + 3,
+            'D3': A2 + AtoD,
+            'Eflat3': A2 + AtoEflat,
+            'E3': A2 + AtoE,
+            'F3': A2 + AtoF,
+            'Gflat3': A2 + AtoGflat,
+            'G3': A2 + AtoG,
+            'Aflat3': A2 + AtoAflat + 1,
+            'A3': A3,
+            'Bflat3': A3 + AtoBflat + 2,
+            'B3': A3 + AtoB,
+            'C4': A3 + AtoC + 3,
+            'Dflat4': A3 + AtoDflat + 3,
+            'D4': A3 + AtoD,
+            'Eflat4': A3 + AtoEflat,
+            'E4': A3 + AtoE,
+            'F4': A3 + AtoF,
+            'Gflat4': A3 + AtoGflat,
+            'G4': A3 + AtoG,
+            'Aflat4': A3 + AtoAflat,
+            'A4': A4,
+            'Bflat4': A4 + AtoBflat + 3,
+            'B4': A4 + AtoB,
+            'C5': A4 + AtoC + 3,
+            'Dflat5': A4 + AtoDflat + 1,
+            'D5': A4 + AtoD,
+            'Eflat5': A4 + AtoEflat,
+            'E5': A4 + AtoE,
+            'F5': A4 + AtoF,
+            'Gflat5': A4 + AtoGflat,
+            'G5': A4 + AtoG,
+            'Aflat5': A4 + AtoAflat,
+            'A5': A5,
+            'Bflat5': A5 + AtoBflat,
+            'B5': A5 + AtoB,
+            'C6': A5 + AtoC,
+            'Dflat6': A5 + AtoDflat,
+            'D6': A5 + AtoD,
+            'Eflat6': A5 + AtoEflat,
+            'E6': A5 + AtoE,
+            'F6': A5 + AtoF,
+            'Gflat6': A5 + AtoGflat,
+            'G6': A5 + AtoG,
+            'Aflat6': A5 + AtoAflat,
+            'A6': A6,
+            'Bflat6': A6 + AtoBflat,
+            'B6': A6 + AtoB,
+            'C7': A6 + AtoC,
+            'Dflat7': A6 + AtoDflat,
+            'D7': A6 + AtoD,
+            'Eflat7': A6 + AtoEflat - 3,
+            'E7': A6 + AtoE,
+            'F7': A6 + AtoF,
+            'Gflat7': A6 + AtoGflat,
+            'G7': A6 + AtoG,
+            'Aflat7': A6 + AtoAflat,
+            'A7': A7,
+            'Bflat7': A7 + AtoBflat,
+            'B7': A7 + AtoB,
+            'C8': A7 + AtoC,
+        }
+    elif name is SheetMusicBoss:
+        A0 = 18
+        A1 = 277
+        A2 = 534
+        A3 = 795
+        A4 = 1053
+        A5 = 1311
+        A6 = 1571
+        A7 = 1828
+
+        AtoBflat = 25
+        BflattoB = 13
+        BtoC = 35
+        CtoDflat = 16
+        DflattoD = 21
+        DtoEflat = 23
+        EflattoE = 14
+        EtoF = 40
+        FtoGflat = 10
+        GflattoG = 25
+        GtoAflat = 17
+
+        AtoB = AtoBflat + BflattoB
+        AtoC = AtoB + BtoC
+        AtoDflat = AtoC + CtoDflat
+        AtoD = AtoDflat + DflattoD
+        AtoEflat = AtoD + DtoEflat
+        AtoE = AtoEflat + EflattoE
+        AtoF = AtoE + EtoF
+        AtoGflat = AtoF + FtoGflat
+        AtoG = AtoGflat + GflattoG
+        AtoAflat = AtoG + GtoAflat
+        notes = {
+            'A0': A0,
+            'Bflat0': A0 + AtoBflat,
+            'B0': A0 + AtoB,
+            'C1': A0 + AtoC,
+            'Dflat1': A0 + AtoDflat,
+            'D1': A0 + AtoD,
+            'Eflat1': A0 + AtoEflat,
+            'E1': A0 + AtoE,
+            'F1': A0 + AtoF,
+            'Gflat1': A0 + AtoGflat,
+            'G1': A0 + AtoG,
+            'Aflat1': A0 + AtoAflat,
+            'A1': A1,
+            'Bflat1': A1 + AtoBflat,
+            'B1': A1 + AtoB,
+            'C2': A1 + AtoC,
+            'Dflat2': A1 + AtoDflat,
+            'D2': A1 + AtoD,
+            'Eflat2': A1 + AtoEflat,
+            'E2': A1 + AtoE,
+            'F2': A1 + AtoF,
+            'Gflat2': A1 + AtoGflat,
+            'G2': A1 + AtoG,
+            'Aflat2': A1 + AtoAflat,
+            'A2': A2,
+            'Bflat2': A2 + AtoBflat,
+            'B2': A2 + AtoB,
+            'C3': A2 + AtoC,
+            'Dflat3': A2 + AtoDflat,
+            'D3': A2 + AtoD,
+            'Eflat3': A2 + AtoEflat,
+            'E3': A2 + AtoE,
+            'F3': A2 + AtoF,
+            'Gflat3': A2 + AtoGflat,
+            'G3': A2 + AtoG,
+            'Aflat3': A2 + AtoAflat,
+            'A3': A3,
+            'Bflat3': A3 + AtoBflat,
+            'B3': A3 + AtoB,
+            'C4': A3 + AtoC,
+            'Dflat4': A3 + AtoDflat ,
+            'D4': A3 + AtoD,
+            'Eflat4': A3 + AtoEflat,
+            'E4': A3 + AtoE,
+            'F4': A3 + AtoF,
+            'Gflat4': A3 + AtoGflat,
+            'G4': A3 + AtoG,
+            'Aflat4': A3 + AtoAflat,
+            'A4': A4,
+            'Bflat4': A4 + AtoBflat ,
+            'B4': A4 + AtoB,
+            'C5': A4 + AtoC,
+            'Dflat5': A4 + AtoDflat,
+            'D5': A4 + AtoD,
+            'Eflat5': A4 + AtoEflat,
+            'E5': A4 + AtoE,
+            'F5': A4 + AtoF,
+            'Gflat5': A4 + AtoGflat,
+            'G5': A4 + AtoG,
+            'Aflat5': A4 + AtoAflat,
+            'A5': A5,
+            'Bflat5': A5 + AtoBflat,
+            'B5': A5 + AtoB,
+            'C6': A5 + AtoC,
+            'Dflat6': A5 + AtoDflat,
+            'D6': A5 + AtoD,
+            'Eflat6': A5 + AtoEflat,
+            'E6': A5 + AtoE,
+            'F6': A5 + AtoF,
+            'Gflat6': A5 + AtoGflat,
+            'G6': A5 + AtoG,
+            'Aflat6': A5 + AtoAflat,
+            'A6': A6,
+            'Bflat6': A6 + AtoBflat,
+            'B6': A6 + AtoB,
+            'C7': A6 + AtoC,
+            'Dflat7': A6 + AtoDflat,
+            'D7': A6 + AtoD,
+            'Eflat7': A6 + AtoEflat,
+            'E7': A6 + AtoE,
+            'F7': A6 + AtoF,
+            'Gflat7': A6 + AtoGflat,
+            'G7': A6 + AtoG,
+            'Aflat7': A6 + AtoAflat,
+            'A7': A7,
+            'Bflat7': A7 + AtoBflat,
+            'B7': A7 + AtoB,
+            'C8': A7 + AtoC
+        }
+    else:
+        print("Invalid note configuration specified")
+        raise Exception
+
     return notes
 
 

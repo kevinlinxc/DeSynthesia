@@ -5,18 +5,26 @@
 import cv2
 import dicts
 import random
+import time
 
-y = 600
-flatoffset = 8
-naturaloffset = 12
+y = 800
+flat_offset = 9
+natural_offset = 12
+video_name = "rasputin.mp4"
 
-video_name = "christmas.mp4"
 
-cap = cv2.VideoCapture(video_name)
+rounding = False # turn off for swingy songs
+
+start = time.time() # time used for progress bar
+cap = cv2.VideoCapture("input_videos/" + video_name)
 fps = cap.get(cv2.CAP_PROP_FPS)
 frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-insize = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
+seconds_to_skip_at_start = 3
+seconds_to_skip_at_end = 18
+skip_frames_start = seconds_to_skip_at_start * fps
+skip_frames_end = frame_count - seconds_to_skip_at_end * fps
 
+in_size = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 
 
 def color_at_both_points(x1, x2, frame):
@@ -33,12 +41,17 @@ def color_at_both_points(x1, x2, frame):
 #
 # cv2.resizeWindow('image', in_size[0], in_size[1])
 
-notes = dicts.get_notes()
+notes = dicts.get_notes(dicts.SheetMusicBoss)
 
 
 counter = 0
 while cap.isOpened():
     ret, frame = cap.read()
+    if not ret:
+        break
+    if counter < skip_frames_start or counter > skip_frames_end:
+        counter += 1
+        continue
     scale_percent = 50# percent of original size
     width = int(frame.shape[1] * scale_percent / 100)
     height = int(frame.shape[0] * scale_percent / 100)
