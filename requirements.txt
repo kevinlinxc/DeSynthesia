@@ -1,3 +1,8 @@
 opencv-python
 numpy
 MIDIUtil
+easygui
+pdf2image
+Pillow
+matplotlib
+PIL
